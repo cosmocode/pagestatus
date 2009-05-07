@@ -1,0 +1,10 @@
+div.plugin__pagestatus {
+    border: 1px solid #000;
+    width:360px;
+    padding:3px;
+    margin:5px auto;
+}
+
+div.plugin__pagestatus.red    { background-color:#ffbbbb; }
+div.plugin__pagestatus.yellow { background-color:#ffffbb; }
+div.plugin__pagestatus.green  { background-color:#bbffbb; }
