@@ -44,9 +44,9 @@ function statusPickerInsert(pickerid,text,edid){
     var txt = document.getElementById(edid);
     var now = new Date(); 
     var stext = "<status " + text + ">\nUser: "+jsEscape(USER)+
-        "\nDate: " + ((now.getDate() < 10)?'0':'')  + now.getDate() + 
+        "\nDate: " + ((now.getYear()<999)?now.getYear()+1900:now.getYear()) + 
         "/" + ((now.getMonth()+1 < 10)?'0':'')  + (now.getMonth()+1) + 
-        "/" + ((now.getYear()<999)?now.getYear()+1900:now.getYear()) +
+        "/" + ((now.getDate() < 10)?'0':'') + now.getDate() +
         "\n</status>";
     
     var textreg = /<status [a-z0-9]+>[^<]*<\/status>/gi;
@@ -60,11 +60,11 @@ function statusPickerInsert(pickerid,text,edid){
     // insert summary
     
     var esu = document.getElementById("edit__summary");
-    var sumreg = /Status: [a-z0-9]+/gi;
+    var sumreg = / ?\(Status: [a-z0-9]+\)/gi;
     if ( esu.value.match(sumreg) ) {
-        esu.value = esu.value.replace(sumreg,"Status: " + text);
+        esu.value = esu.value.replace(sumreg," (Status: " + text + ")");
     } else {
-        esu.value += "Status: "+text;
+        esu.value += " (Status: "+text+")";
     }
 
     // close picker
