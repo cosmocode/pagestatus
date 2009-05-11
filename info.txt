@@ -1,6 +1,6 @@
 author  Dominik Eckelmann
 email   dokuwiki@cosmocode.de
-date    2009-02-17
+date    2009-05-11
 name    sets a pagestatus
 desc    this plugin allows you to set a status for a page
 url     http://www.dokuwiki.org/plugin:pagestatus
