@@ -31,7 +31,7 @@ class action_plugin_pagestatus extends DokuWiki_Action_Plugin {
         $stats = explode(',',$stats);
         $event->data[] = array(
             'type' => 'textlist',
-            'title' => 'Intern',
+            'title' => $this->getLang('toolbartitle'),
             'icon' => '../../plugins/pagestatus/status.png',
             'status' => $stats
         );
