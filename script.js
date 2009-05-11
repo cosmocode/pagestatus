@@ -42,23 +42,23 @@ function addBtnActionTextlist(btn, props, edid, id)
 function statusPickerInsert(pickerid,text,edid){
     // insert
     var txt = document.getElementById(edid);
-    var now = new Date(); 
+    var now = new Date();
     var stext = "<status " + text + ">\nUser: "+jsEscape(USER)+
-        "\nDate: " + ((now.getYear()<999)?now.getYear()+1900:now.getYear()) + 
-        "/" + ((now.getMonth()+1 < 10)?'0':'')  + (now.getMonth()+1) + 
-        "/" + ((now.getDate() < 10)?'0':'') + now.getDate() +
+        "\nDate: " + ((now.getYear()<999)?now.getYear()+1900:now.getYear()) +
+        "-" + ((now.getMonth()+1 < 10)?'0':'')  + (now.getMonth()+1) +
+        "-" + ((now.getDate() < 10)?'0':'') + now.getDate() +
         "\n</status>";
-    
+
     var textreg = /<status [a-z0-9]+>[^<]*<\/status>/gi;
     if ( txt.value.match( textreg )) {
         txt.value = txt.value.replace( textreg , stext );
     } else {
         insertAtCarret(edid,stext);
     }
-    
+
 
     // insert summary
-    
+
     var esu = document.getElementById("edit__summary");
     var sumreg = / ?\(Status: [a-z0-9]+\)/gi;
     if ( esu.value.match(sumreg) ) {
