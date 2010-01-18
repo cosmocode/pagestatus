@@ -11,7 +11,7 @@ require_once(DOKU_INC.'inc/io.php');
 class action_plugin_pagestatus extends DokuWiki_Action_Plugin {
 
     function getInfo(){
-        return confToHash(dirname(__FILE__).'/info.txt');
+        return confToHash(dirname(__FILE__).'/plugin.info.txt');
     }
 
     function register($controller) {

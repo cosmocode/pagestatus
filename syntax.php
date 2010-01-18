@@ -12,7 +12,7 @@ class syntax_plugin_pagestatus extends DokuWiki_Syntax_Plugin {
     var $status = false;
 
     function getInfo(){
-        return confToHash(dirname(__FILE__).'/info.txt');
+        return confToHash(dirname(__FILE__).'/plugin.info.txt');
     }
 
     function getType() { return 'container'; }
